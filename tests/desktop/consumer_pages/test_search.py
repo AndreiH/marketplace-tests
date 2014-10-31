@@ -108,6 +108,6 @@ class TestSearching(BaseTest):
 
         for i in range(len(search_page.results)):
             Assert.true(search_page.results[i].install_button_visible) 
-            Assert.true(search_page.results[i].icon_visible)
+            Assert.true(search_page.results[i].icon_visible) 
             Assert.true(search_page.results[i].ratings_visible)
             Assert.true(search_page.results[i].screenshots_visible)
