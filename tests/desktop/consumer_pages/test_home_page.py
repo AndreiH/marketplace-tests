@@ -58,6 +58,8 @@ class TestConsumerPage:
 
         for i in range(home_page.category_count):
             home_page.hover_over_categories_menu()
+            import time
+            time.sleep(2)
             category_name = home_page.categories.items[i].name
             category_page = home_page.categories.items[i].click_category()
             Assert.equal(category_name.title(), category_page.category_title)
