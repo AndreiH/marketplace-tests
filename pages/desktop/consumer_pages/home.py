@@ -4,6 +4,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -52,6 +53,7 @@ class Home(Base):
             ActionChains(self.selenium).\
             move_to_element(hover_element).\
             perform()
+        WebDriverWait(self.selenium, self.timeout).until(EC.visibility_of_element_located(self._categories_tabel_locator))
 
     @property
     def categories(self):
